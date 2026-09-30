@@ -6,7 +6,7 @@ Unlike traditional static scripts, this framework decomposes data science tasks 
 
 ## Project Architechture & Agent Workflow
 The system is organized around a stateful graph where each node represents an isolated agent that reads from and writes to a shared state(AgentState).
-
+```plaintext
 [Start] 
    │
    ▼
@@ -26,7 +26,7 @@ The system is organized around a stateful graph where each node represents an is
    │
    ▼
  [End]
-
+```
  ### Specialized Agents
  1. **Planner Agent:** Receives high-level user intent (e.g., "Find heart disease data, preprocess it, and build a predictive model"), queries the LLM, and produces a structured plan defininf the ML task type (classification/ regression), target column, and preprocessing requirements.
  2. **Data Finder Agent:** Ingests external datasets or generates synthetic datasets tailored to the plan's specification, outputting raw data structures alongside missinness statistics
